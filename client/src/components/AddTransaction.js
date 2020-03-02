@@ -32,7 +32,7 @@ export const AddTransaction = () => {
             <label htmlFor="amount">
                 Amount (negative - expense, positive - income)
             </label>
-            <input type="number" inputmode="numeric" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
             </div>
             <button className="btn">Add transaction</button>
         </form>
