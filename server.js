@@ -11,6 +11,8 @@ connectDB();
 
 const tranctions = require('./routes/transactions');
 
+const users = require('./routes/users');
+
 const app = express();
 
 app.use(express.json());
@@ -20,6 +22,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use('/api/v1/transactions', tranctions);
+
+app.use('/api/v1/user', users);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
