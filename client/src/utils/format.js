@@ -2,11 +2,11 @@ export function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-export function formatDate(string) {
-    const options = {
+export function formatDate(date) {
+    const dateFormat = {
         year: 'numeric',
-        month: 'long',
+        month: 'short',
         day: 'numeric'
     };
-    return new Date(string).toLocaleDateString([], options);
+    return new Date(date).toLocaleDateString([], dateFormat);
 }

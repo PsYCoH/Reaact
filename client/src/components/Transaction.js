@@ -9,7 +9,9 @@ export const Transaction = ({ transaction }) => {
 
     return (
         <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
-            {transaction.text}
+            <div className="textTitle">
+                {transaction.text}
+            </div>
             <br/>
             {formatDate(transaction.createdAt)}
             <span>{sign}Php{numberWithCommas(Math.abs(transaction.amount))}</span>
