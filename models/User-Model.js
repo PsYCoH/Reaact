@@ -3,20 +3,20 @@ const mongoose = require('mongoose');
 const UsermodelSchema = new mongoose.Schema({
     firstname: {
         type: String,
+        trim: true,
         match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
         required: true
     },
     lastname: {
         type: String,
+        trim: true,
         match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
         required: true
     },
     username: {
-        ype: String,
-        lowercase: true,
-        match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
-        index: true,
+        type: String,
         trim: true,
+        match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
         required: [true, 'Please add your username'],
         unique: true,
         minlength: 6
@@ -30,4 +30,4 @@ const UsermodelSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-module.exports = mongoose.model('UserModel', UsermodelSchema);
+module.exports = mongoose.model('Users', UsermodelSchema);

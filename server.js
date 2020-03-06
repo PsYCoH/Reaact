@@ -9,9 +9,8 @@ dotenv.config({ path:  './config/config.env'});
 
 connectDB();
 
-const tranctions = require('./routes/transactions');
-
 const users = require('./routes/users');
+const tranctions = require('./routes/transactions');
 
 const app = express();
 
@@ -21,9 +20,8 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-app.use('/api/v1/transactions', tranctions);
-
-app.use('/api/v1/user', users);
+app.use('/user', users);
+app.use('/user/api/v1/transactions', tranctions);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
